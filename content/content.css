@@ -1,0 +1,33 @@
+#rh-overlay {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .7);
+    position: fixed;
+    z-index: 1300;
+}
+
+#rh-wordDialogWrapper {
+    height: 100%;
+    outline: 0;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+#rh-wordDialog {
+    min-width: 300px;
+    border: 0;
+    border-radius: 6px;
+    margin: auto;
+    padding: 1em;
+}
+
+#rh-words-container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}

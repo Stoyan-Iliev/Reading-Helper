@@ -1,0 +1,66 @@
+{
+  "manifest_version": 3,
+  "name": "Reading Helper",
+  "version": "0.1",
+  "description": "Displays text word by word on the screen really fast.",
+
+  "action": {
+    "default_icon": {
+      "16": "/images/reading_icon16.png",
+      "24": "/images/reading_icon24.png",
+      "32": "/images/reading_icon32.png",
+      "64": "/images/reading_icon64.png"
+    },
+    "default_title": "Reading Helper",
+    "default_popup": "/popup/popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["/content/content.css"],
+      "js": ["/node_modules/jquery/dist/jquery.min.js", "/content/content.js"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": [ "/options/optionsUtils.js" ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
+  "options_ui": {
+    "page": "/options/options.html",
+    "open_in_tab": true,
+    "browser_style": true
+  },
+
+  "permissions": ["activeTab", "scripting", "storage"],
+
+  "commands": {
+    "load": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      },
+      "description": "Load setting for current website."
+    },
+    "start": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+K"
+      },
+      "description": "Display text word by word."
+    },
+    "end": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Q"
+      },
+      "description": "End of reading"
+    }
+  },
+
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}

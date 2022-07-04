@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_styles/button.css">
+    <link rel="stylesheet" href="options.css">
+    <title>Options</title>
+</head>
+<body>
+<header>
+    <h1>Reading Helper</h1>
+    <nav>
+        <a href="?about" id="about-link">About</a>
+        <a href="?settings" id="settings-link">Settings</a>
+        <a href="?controls" id="controls-link">Controls</a>
+    </nav>
+</header>
+<div class="wrapper">
+    <section id='about'>
+        <h2>About</h2>
+        <p>
+            The purpose of this extension is to help you read faster.
+            It achieves that by displaying the text from the web page
+            you are reading word by word really fast. With a little training
+            it is possible to achieve 500 - 600 words per minute.
+            Achieving such speeds is thanks to Reading Helper eliminating
+            the need to move your eyes left to right, in addition to keeping your
+            eyes focused, instead of them wandering and going backwards.
+        </p>
+    </section>
+
+    <section id='settings'>
+        <h2>Settings</h2>
+        <div class="settingContainer">
+            <label>
+                <span>Words per minute</span>
+                <input type="number" id="word-speed" required min="1">
+            </label>
+        </div>
+
+        <div class="settingContainer">
+            <label>
+                <span>Lower the speed for longer words</span>
+                <select id="use-lower-speed">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </label>
+        </div>
+        <div class="settingContainer" id="div-word-length">
+            <label>
+                <span>Use lower speed on words with characters count</span>
+                <input type="number" id="long-word-length" required min="5">
+            </label>
+        </div>
+        <div class="settingContainer">
+            <label>
+                <span>Font size</span>
+                <select id="font-size">
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                    <option value="18">18</option>
+                    <option value="20">20</option>
+                    <option value="22">22</option>
+                    <option value="24">24</option>
+                    <option value="26">26</option>
+                    <option value="28">28</option>
+                    <option value="36">36</option>
+                    <option value="48">48</option>
+                    <option value="72">72</option>
+                </select>
+            </label>
+        </div>
+        <div class="settingContainer">
+            <label>
+                <span>Chose color scheme</span>
+                <select id="color-scheme">
+                    <option value="use-inherited">Color scheme from the page you are reading</option>
+                    <option value="use-custom">Custom Scheme</option>
+                </select>
+            </label>
+        </div>
+        <div class="settingContainer color font">
+            <label>
+                <span>Font color</span>
+                <input type="color" id="font-color">
+            </label>
+        </div>
+        <div class="settingContainer color background">
+            <label>
+                <span>Background color</span>
+                <input type="color" id="bg-color">
+            </label>
+        </div>
+
+
+        <button type="button" id="save-setting">Save</button>
+    </section>
+
+    <section id='controls'>
+        <h2>Keepin' it real</h2>
+        <p>Below are listed the controls and instruction for using Reading Helper</p>
+
+        <p>
+            [Ctrl + Shift + Y] - Start of setup for new websites.
+        </p>
+
+        <p>
+            [Ctrl + Shift + K] - Start reading.
+        </p>
+
+        <p>
+            [Ctrl + Shift + Q] - End reading.
+        </p>
+
+        <p>
+            When you open new website, in order to start reading with Reading Helper you
+            need to do the initial setup for that website. First press the command for
+            start of setup, then you need to double-click on a word from two separate paragraphs.
+            After you do that you can start reading. This setup need to be done only once for
+            every website you want to read use Reading Helper. You can always refresh the setup for that
+            website if for some reason Reading Helper is not displaying the correct text. To redo the setup you need
+            to do the steps for the initial setup.
+        </p>
+
+        <p>
+            When you are ready with the setup you can start reading.
+            <br>
+            If for some reason you want to stop reading you can press the
+            command for End reading or simply refresh the page.
+        </p>
+
+    </section>
+</div>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="about.js"></script>
+    <script src="settings.js"></script>
+    <script src="controls.js"></script>
+    <script src="optionsUtils.js"></script>
+</body>
+</html>
